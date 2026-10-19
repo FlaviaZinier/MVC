@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde-escuro: #174b3a;
+    --verde: #287653;
+    --verde-claro: #e8f3ed;
+    --fundo: #f4f7f4;
+    --texto: #24332b;
+    --cinza: #68756d;
+    --borda: #dce6df;
+    --branco: #ffffff;
+    --erro: #a33333;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px 18px;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.topo {
+    margin-bottom: 26px;
+    text-align: center;
+}
+
+.marca {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    font-size: 27px;
+}
+
+h1 {
+    color: var(--verde-escuro);
+    font-size: clamp(1.7rem, 4vw, 2.2rem);
+    line-height: 1.2;
+}
+
+.subtitulo {
+    margin-top: 8px;
+    color: var(--cinza);
+    font-size: 0.98rem;
+}
+
+.card {
+    padding: 30px;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    background: var(--branco);
+    box-shadow: 0 10px 30px rgba(28, 66, 45, 0.06);
+}
+
+h2 {
+    margin-bottom: 7px;
+    color: var(--verde-escuro);
+    font-size: 1.35rem;
+}
+
+.descricao {
+    margin-bottom: 24px;
+    color: var(--cinza);
+    font-size: 0.94rem;
+}
+
+.campo {
+    margin-bottom: 19px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--texto);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    border: 1px solid #cbd8ce;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    color: var(--texto);
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(40, 118, 83, 0.13);
+}
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.botao {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 17px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.94rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.botao:hover {
+    transform: translateY(-1px);
+}
+
+.botao-principal {
+    background: var(--verde);
+    color: white;
+}
+
+.botao-principal:hover {
+    background: var(--verde-escuro);
+}
+
+.botao-secundario {
+    border-color: var(--borda);
+    background: white;
+    color: var(--verde-escuro);
+}
+
+.botao-secundario:hover {
+    background: var(--verde-claro);
+}
+
+.mensagem {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    border: 1px solid #c8e2d1;
+    border-radius: 10px;
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    font-size: 0.94rem;
+}
+
+.mensagem.erro {
+    border-color: #efcaca;
+    background: #fff0f0;
+    color: var(--erro);
+}
+
+.tabela-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead {
+    background: var(--verde-claro);
+}
+
+th, td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--borda);
+    text-align: left;
+}
+
+th {
+    color: var(--verde-escuro);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+td {
+    font-size: 0.94rem;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #f8fbf8;
+}
+
+.preco {
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.vazio {
+    padding: 25px 15px;
+    border: 1px dashed #cbd8ce;
+    border-radius: 12px;
+    background: #fafcfb;
+    color: var(--cinza);
+    text-align: center;
+}
+
+.rodape {
+    margin-top: 22px;
+    color: var(--cinza);
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 25px 12px;
+    }
+
+    .card {
+        padding: 21px 17px;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+
+    .botao {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 11px 12px;
+    }
+}
